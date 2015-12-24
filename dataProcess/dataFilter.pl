@@ -1,6 +1,7 @@
 #!/usr/bin/perl 
 #-d:NYTProf
 # For profiling
+
 =head1
   dataFilter.pl : Used to bin exported windop csv data.
 
@@ -23,6 +24,7 @@
   Contact: andy\@thewindop.com
   
 =cut
+
 ###############################################################################
 # PERL modules to load
 ###############################################################################
@@ -71,13 +73,7 @@ our $myGlobal__LoggingLevel = $configHash{verbose};
 if ( $configHash{help} ) {
   printHelpText();
 } else {
-
-print "###############################################################################
-# dataFilter.pl v1.0, Copyright (C) 2015 thewindop.com
-# dataFilter.pl comes with ABSOLUTELY NO WARRANTY; for details type `-h'.
-###############################################################################
-";
-
+  printLicenseHeader();
   my $count      = 0;
   my $totalcount = 0;
   my $outStr     = getUniqueTimeStampSecDelay();
@@ -433,6 +429,17 @@ sub writeToFile {
     print FILE $string;
     close(FILE);
   }
+}
+
+###############################################################################
+# print the License header!
+###############################################################################
+sub printLicenseHeader {
+  print "###############################################################################
+# dataFilter.pl v1.0, Copyright (C) 2015 thewindop.com
+# dataFilter.pl comes with ABSOLUTELY NO WARRANTY; for details type `-h'.
+###############################################################################
+";
 }
 
 ###############################################################################
